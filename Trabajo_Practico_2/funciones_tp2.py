@@ -19,6 +19,8 @@ def imagen_a_matriz(foto:str)->int:
 
     matriz=np.array(imagen)
     print(matriz)
+    return matriz
+
 
 
 
@@ -33,23 +35,13 @@ def generador_matrices_filter (matriz:int)-> int:
     Reetorna:
     """ 
 
-    print(type(matriz))
+    (type(matriz))
     print(matriz)
 
-#def padding (matriz):
-#   padding = np.pad(matriz, ((1,1), (1,1)),constant_values=0)
- #   return padding
+def padding (matriz):
+   padding = np.pad(matriz, ((1,1), (1,1) , (0,0)),constant_values=0)
+   return padding
 
     
-
-
-
-
-
-
-
-
-
-#def convolucion (input:int , filter: int) ->int :
     
 
