@@ -8,3 +8,4 @@ matriz_padding= np.zeros((alto + 2 , ancho + 2 , canales ),dtype=Matriz_rgb.dtyp
 matriz_padding[1:alto + 1, 1:ancho + 1, :] = Matriz_rgb #copiamos la matriz original en el centro de la matriz de ceros
 print('Matriz con padding')
 print(matriz_padding)
+
