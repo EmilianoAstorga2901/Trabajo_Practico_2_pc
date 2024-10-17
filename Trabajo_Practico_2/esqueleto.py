@@ -1,8 +1,9 @@
 import funciones_tp2
 import numpy as np
 import PIL
-foto1='fotos/castle.jpg'
-Imagen_RGB=foto1
+links=('fotos/beach.jpg','fotos/bench.jpg','fotos/castle.jpg', 'fotos/dali.jpg', 
+       'fotos/dali2.jpg', 'fotos/dolphin.jpg', 'fotos/lake.jpg', 'fotos/messi.webp')
+Imagen_RGB=input('Ingrese el link de la foto:')
 Matriz=funciones_tp2.imagen_a_matriz(Imagen_RGB)
 hacer_padding= funciones_tp2.padding(Matriz)
 print(hacer_padding)
