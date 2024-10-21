@@ -17,7 +17,7 @@ def main():
     print(f'Las dimensiones originales son {Matriz.shape[0]} x {Matriz.shape[1]}')
     nuevo_ancho = int(input("Ingrese un nuevo ancho: "))
     nuevo_alto = int(input("Ingrese un nuevo largo: "))
-    if nuevo_ancho < 0 or nuevo_alto < 0 or nuevo_ancho > Matriz.shape[0] or nuevo_alto > Matriz.shape[1]:
+    if nuevo_ancho < 0 or nuevo_alto < 0 or nuevo_ancho > Matriz.shape[1] or nuevo_alto > Matriz.shape[0]:
         print('El ancho o alto no pueden ser negativos ni mayor a su ancho o alto original')
         return
 
@@ -69,7 +69,7 @@ def main():
 
         gradiente=funciones_tp2.caclular_gradiente(sobel_x_promedio,sobel_y_promedio)
 
-        matriz_energia_acumulada = funciones_tp2.matriz_energia_acumulada(gradiente)
+        matriz_energia_acumulada = funciones_tp2.matriz_energia_acumulada_filas(gradiente)
 
         costura_filas=funciones_tp2.costura_de_menor_energia_filas(matriz_energia_acumulada)
 

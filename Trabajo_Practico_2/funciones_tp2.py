@@ -105,8 +105,8 @@ def matriz_energia_acumulada_filas(energia:np.ndarray)->np.ndarray:
         for i in range (alto):
             energia_acumulada[i,j]=energia[i,j] + min(
                 energia_acumulada[i, j-1], 
-                energia_acumulada[i-1 , j-1] if j >0 else np.inf,
-                energia_acumulada[i+1 , j-1] if j < alto - 1 else np.inf
+                energia_acumulada[i-1 , j-1] if i >0 else np.inf,
+                energia_acumulada[i+1 , j-1] if i < alto - 1 else np.inf
             )
     
     return energia_acumulada
@@ -146,7 +146,7 @@ def costura_de_menor_energia_filas (energia_acumulada:np.ndarray) -> np.ndarray:
         costura_filas: matriz con una fila por pixeles 
     """
     alto , ancho = energia_acumulada.shape
-    costura_filas = np.zeros(alto, dtype=int)
+    costura_filas = np.zeros(ancho, dtype=int)
 
     ultima_columna = energia_acumulada[:,-1]
     valor_minimo = np.argmin(ultima_columna)
@@ -159,7 +159,7 @@ def costura_de_menor_energia_filas (energia_acumulada:np.ndarray) -> np.ndarray:
         centro = energia_acumulada[i,j]
         abajo =  energia_acumulada[i + 1, j] if i < alto - 1 else np.inf
 
-        costura_filas[i] = i + np.argmin([arriba,centro,abajo]) - 1
+        costura_filas[j] = i + np.argmin([arriba,centro,abajo]) - 1
 
     return costura_filas
 
